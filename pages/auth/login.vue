@@ -5,6 +5,10 @@
         Login
       </h1>
       <form class="auth-form" @submit.prevent="submit">
+        <alert-error v-if="form.errors.has('Verification')" :form="form">
+          {{ form.errors.get('Verification') }}
+          <nuxt-link :to="{name: 'verification.resend'}">Resend verification email</nuxt-link>
+        </alert-error>
 
         <div class="form-group">
           <input
