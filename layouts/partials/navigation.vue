@@ -78,11 +78,14 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <img class="user-thumb"   src="" />
+              <img class="user-thumb" src="~assets/images/profile.png" />
               <div class="usr-info">
-                <span class="user-name font-14 fw-500">
-                 name
+                               <span class="user-name font-14 fw-500">
+                  {{
+                  $auth.user.name
+                  }}
                 </span>
+
                 <span class="user-deg font-10 fw-300">
                  tagline
                 </span>
@@ -124,6 +127,11 @@
 
 <script>
 export default {
+  methods:{
+    logout(){
+      this.$auth.logout()
+    }
+  }
 
 };
 </script>

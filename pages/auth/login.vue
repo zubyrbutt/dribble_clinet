@@ -33,19 +33,19 @@
           <has-error :form="form" field="password"></has-error>
         </div>
         <div class="mt-4 mb-4 clearfix">
-         <a href="">Forgot password?</a>
+
+          <nuxt-link :to="{name: 'password.email'}">Forgot password?</nuxt-link>
 
         </div>
         <div class="text-right">
           <button :disabled="form.busy" type="submit" class="btn btn-primary">
-            <span v-if="form.busy">
+            <span  :loading="form.busy">
               <i class="fas fa-spinner fa-spin"></i>
             </span>
             Login</button>
         </div>
         <p class="font-14 fw-400 text-center mt-4">
           Don't have an account yet?
-
           <nuxt-link :to="{name: 'register'}">Create an account</nuxt-link>
 
         </p>
